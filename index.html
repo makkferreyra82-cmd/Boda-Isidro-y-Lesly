@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Isidro & Jesly</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-fondo: #ffffff;
+            --color-texto: #333333;
+            --color-acento: #bc778b; /* Rosa */
+            --color-contador: #823c2e; /* Café/Vino */
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: var(--color-fondo);
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--color-texto);
+            overflow-x: hidden;
+        }
+
+        /* --- ESTILOS SECCIÓN 1 (HERO) --- */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        }
+
+        .nombres {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-style: italic;
+            color: var(--color-acento);
+            margin: 20px 0;
+            font-weight: 400;
+        }
+
+        .texto-invitacion {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+
+        /* --- ESTILOS SECCIÓN 2 (ESPECIAL) --- */
+        #especial {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondoseccion02.webp');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .titulo-seccion2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-celebracion {
+            display: inline-block;
+            background-color: var(--color-acento);
+            color: #ffffff;
+            padding: 18px 45px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-celebracion:active { transform: scale(0.95); }
+
+        /* --- ESTILOS SECCIÓN 3 (CONTADOR) --- */
+        #contador {
+            background-color: var(--color-contador);
+            padding: 40px 0 60px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .falta-poco {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0 0 25px 0;
+            font-size: 2.2rem; /* Aumentado */
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 15px;
+            color: #FFFFFF;
+        }
+
+        .timer-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 70px;
+        }
+
+        .timer-val {
+            display: block;
+            line-height: 1;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 48px; /* Tamaño móvil */
+            font-family: 'Playfair Display', serif;
+        }
+
+        .label-timer {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* --- RESPONSIVO PARA MÓVILES --- */
+        @media (max-width: 600px) {
+            .nombres { font-size: 2.2rem; }
+            .titulo-seccion2 { font-size: 1.8rem; }
+            .btn-celebracion { width: 80%; padding: 15px 10px; }
+            .falta-poco { font-size: 1.8rem; }
+        }
+
+        /* --- RESPONSIVO TABLETAS Y PC --- */
+        @media (min-width: 768px) {
+            .timer-val { font-size: 90px; }
+            .timer-container { gap: 50px; }
+            .label-timer { font-size: 18px; }
+            .falta-poco { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <img src="hero01.webp" alt="Nuestra Foto" class="hero-image">
+        <img src="monograma01.webp" alt="Monograma" style="width: 100px; margin: 30px 0;">
+        
+        <div style="padding: 0 20px;">
+            <p class="texto-invitacion">Tenemos el gusto de invitarte a este día tan importante de nuestras vidas</p>
+            <p class="texto-invitacion" style="font-weight: bold;">Nuestra Boda</p>
+            <h1 class="nombres">Isidro & Jesly</h1>
+            <p class="texto-invitacion">Queremos compartir contigo la felicidad de nuestra unión</p>
+        </div>
+    </section>
+
+    <section id="especial">
+        <h2 class="titulo-seccion2">Nuestra boda, un día especial</h2>
+        
+        <div style="max-width: 500px; line-height: 1.6; font-size: 1.1rem;">
+            <p>Sera un honor contar con tu <strong>presencia</strong>.</p>
+            <p>Los esperamos para celebrar juntos el día.</p>
+        </div>
+
+        <a href="https://form.jotform.com/260032396916054" class="btn-celebracion" target="_blank">
+            ¡Unete a nuestra celebracion!
+        </a>
+
+        <div style="margin-top: 50px;">
+            <div style="font-size: 1.2rem; letter-spacing: 8px; margin-bottom: 10px;">★★★★★</div>
+            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; font-weight: 600;">
+                Un momento inolvidable
+            </p>
+        </div>
+    </section>
+
+    <section id="contador">
+        <h3 class="falta-poco">¡Falta poco!</h3>
+
+        <div class="timer-container">
+            <div class="timer-unit">
+                <span id="d_val" class="timer-val">00</span>
+                <span class="label-timer">Días</span>
+            </div>
+            <div class="timer-unit">
+                <span id="h_val" class="timer-val">00</span>
+                <span class="label-timer">Hrs</span>
+            </div>
+            <div class="timer-unit">
+                <span id="m_val" class="timer-val">00</span>
+                <span class="label-timer">Min</span>
+            </div>
+            <div class="timer-unit">
+                <span id="s_val" class="timer-val">00</span>
+                <span class="label-timer">Seg</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+        const targetDate = new Date(2026, 2, 7, 17, 0, 0).getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const t = targetDate - now;
+
+            if (t <= 0) {
+                document.getElementById("contador").innerHTML =
+                    "<h3 class='falta-poco'>¡Llegó el día!</h3>";
+                return;
+            }
+
+            const days = Math.floor(t / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+            document.getElementById("d_val").textContent = days;
+            document.getElementById("h_val").textContent = ("0" + hours).slice(-2);
+            document.getElementById("m_val").textContent = ("0" + minutes).slice(-2);
+            document.getElementById("s_val").textContent = ("0" + seconds).slice(-2);
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    })();
+    </script>
+
+</body>
+</html>
