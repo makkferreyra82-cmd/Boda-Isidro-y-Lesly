@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Boda - Isidro & Jesly</title>
+    <title>Nuestra Boda - Isidro & Lesly</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
     
     <style>
+        /* --- ESTILOS BASE Y SECCIÓN 1 (Hero) --- */
         :root {
             --color-fondo: #ffffff;
-            --color-texto: #333333;
-            --color-acento: #bc778b; /* Rosa */
-            --color-contador: #823c2e; /* Café/Vino */
+            --color-texto: #333333; 
+            --color-nombres: #000000; 
         }
 
         body, html {
@@ -20,103 +20,159 @@
             padding: 0;
             width: 100%;
             background-color: var(--color-fondo);
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Playfair Display', serif;
             color: var(--color-texto);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- ESTILOS SECCIÓN 1 (HERO) --- */
         .hero-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding-bottom: 50px;
+            width: 100%;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-width: 600px; 
+            line-height: 0;
+            position: relative;
         }
 
         .hero-image {
             width: 100%;
             height: auto;
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+
+        .monograma {
+            width: 110px; 
+            height: auto;
+            margin-top: -120px; 
+            position: relative;
+            z-index: 10;
+            margin-bottom: 5px;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .content-hero {
+            padding: 0 25px 60px 25px;
+            max-width: 450px;
+            margin-top: -5px; 
+            position: relative;
+            z-index: 11;
         }
 
         .nombres {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 3rem;
+            margin: 10px 0;
             font-style: italic;
-            color: var(--color-acento);
-            margin: 20px 0;
+            color: var(--color-nombres);
             font-weight: 400;
+            letter-spacing: -0.5px;
         }
 
         .texto-invitacion {
-            font-size: 1rem;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin: 10px 0;
-            padding: 0 20px;
+            line-height: 1.6;
+            color: #555555;
         }
 
-        /* --- ESTILOS SECCIÓN 2 (ESPECIAL) --- */
+        @media (max-width: 600px) {
+            .hero-image-container { max-width: 100%; }
+            .monograma { width: 90px; margin-top: -100px; }
+            .nombres { font-size: 2.4rem; margin: 5px 0; }
+            .texto-invitacion { font-size: 0.8rem; letter-spacing: 1.5px; padding: 0 10px; }
+            .content-hero { padding-bottom: 40px; }
+        }
+
+        /* --- ESTILOS SECCIÓN 2 (Especial) --- */
         #especial {
+            position: relative;
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('fondoseccion02.webp');
             background-size: cover;
             background-position: center;
+            background-attachment: scroll;
             color: #ffffff;
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
 
-        .titulo-seccion2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+        .titulo-boda {
+            font-size: 2.8rem;
+            margin-bottom: 35px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            max-width: 90%;
+        }
+
+        .texto-contenedor {
+            max-width: 450px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 1.15rem;
+            font-weight: 300;
         }
 
         .btn-celebracion {
             display: inline-block;
-            background-color: var(--color-acento);
+            background-color: #bc778b;
             color: #ffffff;
-            padding: 18px 45px;
+            padding: 18px 40px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 30px;
+            font-size: 1.1rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
+            margin-top: 30px;
+            transition: transform 0.2s ease, background 0.3s ease;
         }
 
-        .btn-celebracion:active { transform: scale(0.95); }
-
-        /* --- ESTILOS SECCIÓN 3 (CONTADOR) --- */
-        #contador {
-            background-color: var(--color-contador);
-            padding: 40px 0 60px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .estrellas {
+            margin-top: 45px;
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            margin-bottom: 10px;
         }
 
-        .falta-poco {
-            color: white;
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
+        .subtitulo-final {
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin: 0 0 25px 0;
-            font-size: 2.2rem; /* Aumentado */
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            #especial { padding: 50px 15px; }
+            .titulo-boda { font-size: 1.9rem; }
+            .btn-celebracion { width: 85%; padding: 16px 10px; font-size: 1rem; }
+        }
+
+        /* --- ESTILOS SECCIÓN 3 (Contador) --- */
+        #wedding-timer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .timer-container {
             display: flex;
             justify-content: center;
             align-items: baseline;
-            gap: 15px;
+            gap: 15px; 
             color: #FFFFFF;
         }
 
@@ -130,122 +186,347 @@
         .timer-val {
             display: block;
             line-height: 1;
+            color: #FFFFFF;
             font-weight: 600;
             margin-bottom: 8px;
-            font-size: 48px; /* Tamaño móvil */
-            font-family: 'Playfair Display', serif;
+            font-size: 45px;
         }
 
-        .label-timer {
+        .label {
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-size: 11px;
             opacity: 0.8;
         }
 
-        /* --- RESPONSIVO PARA MÓVILES --- */
-        @media (max-width: 600px) {
-            .nombres { font-size: 2.2rem; }
-            .titulo-seccion2 { font-size: 1.8rem; }
-            .btn-celebracion { width: 80%; padding: 15px 10px; }
-            .falta-poco { font-size: 1.8rem; }
+        @media (min-width: 480px) {
+            .timer-val { font-size: 70px; }
+            .timer-container { gap: 35px; }
+            .label { font-size: 16px; }
         }
 
-        /* --- RESPONSIVO TABLETAS Y PC --- */
         @media (min-width: 768px) {
-            .timer-val { font-size: 90px; }
-            .timer-container { gap: 50px; }
-            .label-timer { font-size: 18px; }
-            .falta-poco { font-size: 3.5rem; }
+            .timer-val { font-size: 100px; }
+            .timer-container { gap: 60px; }
+            .label { font-size: 20px; }
+        }
+
+        /* --- ESTILOS SECCIÓN 4 (Ubicaciones) --- */
+        .seccion-itinerario {
+            background-color: #fff2e6;
+            padding: 60px 20px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            overflow: hidden;
+        }
+
+        .titulo-principal {
+            font-size: 2.5rem;
+            color: #823c2e;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .tarjeta-evento {
+            max-width: 500px;
+            margin: 0 auto 60px auto;
+            padding: 0 10px;
+        }
+
+        .tarjeta-evento h3 {
+            color: #bc778b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .descripcion-evento {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .info-logistica {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .foto-lugar {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .foto-lugar.aparecer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-ubicacion {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #bc778b;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- ESTILOS SECCIÓN 5 (Carrusel) --- */
+        .carousel-section {
+            padding: 40px 0;
+            width: 100%;
+            background-color: #f9f9f9;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .carousel-slide {
+            display: flex;
+            width: 100%;
+            transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+            border: none;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .prev { left: 15px; }
+        .next { right: 15px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #bc778b;
+            transform: scale(1.3);
+        }
+
+        .carousel-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                width: 100%;
+                border-radius: 0;
+            }
+            .carousel-slide img { height: 400px; }
+            .carousel-title { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <section class="hero-section">
-        <img src="hero01.webp" alt="Nuestra Foto" class="hero-image">
-        <img src="monograma01.webp" alt="Monograma" style="width: 100px; margin: 30px 0;">
-        
-        <div style="padding: 0 20px;">
+        <div class="hero-image-container">
+            <img src="hero01.webp" alt="Nuestra Foto" class="hero-image">
+        </div>
+        <img src="monograma01.webp" alt="Monograma" class="monograma">
+        <div class="content-hero">
             <p class="texto-invitacion">Tenemos el gusto de invitarte a este día tan importante de nuestras vidas</p>
-            <p class="texto-invitacion" style="font-weight: bold;">Nuestra Boda</p>
-            <h1 class="nombres">Isidro & Jesly</h1>
-            <p class="texto-invitacion">Queremos compartir contigo la felicidad de nuestra unión</p>
+            <p class="texto-invitacion" style="font-weight: 700; color: #000; margin-top: 15px;">Nuestra Boda</p>
+            <h1 class="nombres">Isidro & Lesly</h1>
+            <p class="texto-invitacion" style="margin-top: 15px;">Queremos compartir contigo la felicidad de nuestra unión</p>
         </div>
     </section>
 
     <section id="especial">
-        <h2 class="titulo-seccion2">Nuestra boda, un día especial</h2>
-        
-        <div style="max-width: 500px; line-height: 1.6; font-size: 1.1rem;">
+        <h2 class="titulo-boda">Nuestra boda, un día especial</h2>
+        <div class="texto-contenedor">
+            <p>Tenemos el gusto de invitarte a este día tan importante de nuestras vidas</p>
+            <p>Queremos compartir contigo la felicidad de nuestra unión</p>
             <p>Sera un honor contar con tu <strong>presencia</strong>.</p>
-            <p>Los esperamos para celebrar juntos el día.</p>
         </div>
-
-        <a href="https://form.jotform.com/260032396916054" class="btn-celebracion" target="_blank">
-            ¡Unete a nuestra celebracion!
-        </a>
-
-        <div style="margin-top: 50px;">
-            <div style="font-size: 1.2rem; letter-spacing: 8px; margin-bottom: 10px;">★★★★★</div>
-            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; font-weight: 600;">
-                Un momento inolvidable
-            </p>
+        <div>
+            <a href="https://form.jotform.com/260032396916054" class="btn-celebracion" target="_blank">¡Unete a nuestra celebracion!</a>
+        </div>
+        <div>
+            <div class="estrellas">★★★★★</div>
+            <p class="subtitulo-final">Un momento inolvidable</p>
         </div>
     </section>
 
-    <section id="contador">
-        <h3 class="falta-poco">¡Falta poco!</h3>
-
-        <div class="timer-container">
-            <div class="timer-unit">
-                <span id="d_val" class="timer-val">00</span>
-                <span class="label-timer">Días</span>
-            </div>
-            <div class="timer-unit">
-                <span id="h_val" class="timer-val">00</span>
-                <span class="label-timer">Hrs</span>
-            </div>
-            <div class="timer-unit">
-                <span id="m_val" class="timer-val">00</span>
-                <span class="label-timer">Min</span>
-            </div>
-            <div class="timer-unit">
-                <span id="s_val" class="timer-val">00</span>
-                <span class="label-timer">Seg</span>
+    <section id="contador" style="background-color: #823c2e; padding: 40px 0 60px 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h3 style="text-align: center; color: white; font-family: 'Playfair Display', serif; font-weight: 400; text-transform: uppercase; letter-spacing: 4px; margin: 0 0 20px 0; font-size: 2rem;">
+            ¡Falta poco!
+        </h3>
+        <div id="wedding-timer">
+            <div class="timer-container">
+                <div class="timer-unit"><span id="d_val" class="timer-val">00</span><span class="label">Días</span></div>
+                <div class="timer-unit"><span id="h_val" class="timer-val">00</span><span class="label">Hrs</span></div>
+                <div class="timer-unit"><span id="m_val" class="timer-val">00</span><span class="label">Min</span></div>
+                <div class="timer-unit"><span id="s_val" class="timer-val">00</span><span class="label">Seg</span></div>
             </div>
         </div>
+    </section>
+
+    <section class="seccion-itinerario">
+        <h2 class="titulo-principal">Nuestra Boda</h2>
+        <div class="tarjeta-evento">
+            <h3>Ceremonia Religiosa</h3>
+            <p class="descripcion-evento">Hay momentos que se quedan grabados en el alma. Queremos que seas testigo de nuestro "Sí" ante Dios en la Parroquia Espíritu Santo...</p>
+            <span class="info-logistica">17:00 hrs | Parroquia del Espíritu Santo</span>
+            <img src="iglesia.webp" class="foto-lugar" alt="Parroquia">
+            <br><a href="https://maps.google.com" target="_blank" class="btn-ubicacion">Ver Ubicación</a>
+        </div>
+        <div class="tarjeta-evento">
+            <h3>Ceremonia Civil</h3>
+            <p class="descripcion-evento">Con el atardecer como testigo, firmaremos el compromiso de amarnos siempre...</p>
+            <span class="info-logistica">18:30 hrs | Villa la Moraleja</span>
+            <img src="civil.webp" class="foto-lugar" alt="Ceremonia Civil">
+            <br><a href="https://maps.google.com" target="_blank" class="btn-ubicacion">Ver Ubicación</a>
+        </div>
+        <div class="tarjeta-evento">
+            <h3>Recepción</h3>
+            <p class="descripcion-evento">¡Que comience la fiesta! Nos vemos para bailar, reír y celebrar...</p>
+            <span class="info-logistica">19:00 hrs | Villa la Moraleja</span>
+            <img src="recepcion.webp" class="foto-lugar" alt="Recepción">
+            <br><a href="https://maps.google.com" target="_blank" class="btn-ubicacion">Ver Ubicación</a>
+        </div>
+    </section>
+
+    <section id="carousel-section" class="carousel-section">
+        <h2 class="carousel-title">Nuestros Momentos</h2>
+        <div class="carousel-container">
+            <div class="carousel-slide" id="slide">
+                <img src="fotoh (1).webp" alt="Foto 1">
+                <img src="fotoh (2).webp" alt="Foto 2">
+                <img src="fotoh (3).webp" alt="Foto 3">
+                <img src="fotoh (4).webp" alt="Foto 4">
+                <img src="fotoh (5).webp" alt="Foto 5">
+                <img src="fotoh (6).webp" alt="Foto 6">
+            </div>
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="carousel-dots" id="dots-container"></div>
     </section>
 
     <script>
+    // 1. Script Contador
     (function () {
         const targetDate = new Date(2026, 2, 7, 17, 0, 0).getTime();
-
         function updateTimer() {
             const now = new Date().getTime();
             const t = targetDate - now;
-
             if (t <= 0) {
-                document.getElementById("contador").innerHTML =
-                    "<h3 class='falta-poco'>¡Llegó el día!</h3>";
+                document.getElementById("wedding-timer").innerHTML = "<span style='color:white; font-size:35px;'>¡Llegó el día!</span>";
                 return;
             }
-
-            const days = Math.floor(t / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((t % (1000 * 60)) / 1000);
-
-            document.getElementById("d_val").textContent = days;
-            document.getElementById("h_val").textContent = ("0" + hours).slice(-2);
-            document.getElementById("m_val").textContent = ("0" + minutes).slice(-2);
-            document.getElementById("s_val").textContent = ("0" + seconds).slice(-2);
+            document.getElementById("d_val").textContent = Math.floor(t / (1000 * 60 * 60 * 24));
+            document.getElementById("h_val").textContent = ("0" + Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).slice(-2);
+            document.getElementById("m_val").textContent = ("0" + Math.floor((t % (1000 * 60 * 60)) / (1000 * 60))).slice(-2);
+            document.getElementById("s_val").textContent = ("0" + Math.floor((t % (1000 * 60)) / 1000)).slice(-2);
         }
-
-        updateTimer();
-        setInterval(updateTimer, 1000);
+        updateTimer(); setInterval(updateTimer, 1000);
     })();
-    </script>
 
+    // 2. Script Animación Imágenes
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('aparecer'); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.foto-lugar').forEach(foto => observer.observe(foto));
+
+    // 3. Script Carrusel
+    const slide = document.getElementById('slide');
+    const images = document.querySelectorAll('#slide img');
+    const dotsContainer = document.getElementById('dots-container');
+    let counter = 0;
+    const totalImages = images.length;
+    let timer;
+
+    function initDots() {
+        for (let i = 0; i < totalImages; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+    function updateDisplay() {
+        slide.style.transform = `translateX(${-counter * 100}%)`;
+        document.querySelectorAll('.dot').forEach((dot, i) => dot.classList.toggle('active', i === counter));
+    }
+    function moveSlide(step) { counter = (counter + step + totalImages) % totalImages; updateDisplay(); resetTimer(); }
+    function goToSlide(idx) { counter = idx; updateDisplay(); resetTimer(); }
+    function startTimer() { timer = setInterval(() => moveSlide(1), 4000); }
+    function resetTimer() { clearInterval(timer); startTimer(); }
+    
+    initDots(); startTimer();
+
+    // Swipe para Carrusel
+    let touchStartX = 0;
+    const carouselArea = document.querySelector('.carousel-container');
+    carouselArea.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+    carouselArea.addEventListener('touchend', e => {
+        const touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) moveSlide(1);
+        else if (touchEndX - touchStartX > 50) moveSlide(-1);
+    }, {passive: true});
+    </script>
 </body>
 </html>
